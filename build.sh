@@ -37,20 +37,20 @@ fi
 mkdir -p cmake
 cd cmake
 if [[ "${1}" == "-D"* ]]; then
-    cmake "${1}" ..
+    cmake3 "${1}" ..
 else
-    cmake ..
+    cmake3 ..
 fi
 
 # Build the sources
-cmake --build . -- -j $(nproc)
+cmake3 --build . -- -j $(nproc)
 
 # If we are asked to install, we do this here
 # Otherwise, we simply copy the binary one level up
 if [[ -n "${install}" ]]; then
     echo "Installing pihole-FTL"
     SUDO=$(which sudo)
-    ${SUDO} cmake --install .
+    ${SUDO} cmake3 --install .
 else
     echo "Copying compiled pihole-FTL binary to repository root"
     cp pihole-FTL ../
