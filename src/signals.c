@@ -187,8 +187,8 @@ static void __attribute__((noreturn)) signal_handler(int sig, siginfo_t *si, voi
 			case BUS_ADRALN:    logg("     with code:  BUS_ADRALN (Invalid address alignment)"); break;
 			case BUS_ADRERR:    logg("     with code:  BUS_ADRERR (Non-existent physical address)"); break;
 			case BUS_OBJERR:    logg("     with code:  BUS_OBJERR (Object specific hardware error)"); break;
-			case BUS_MCEERR_AR: logg("     with code:  BUS_MCEERR_AR (Hardware memory error: action required)"); break;
-			case BUS_MCEERR_AO: logg("     with code:  BUS_MCEERR_AO (Hardware memory error: action optional)"); break;
+// CentOS 7 Fork	case BUS_MCEERR_AR: logg("     with code:  BUS_MCEERR_AR (Hardware memory error: action required)"); break;
+// CentOS 7 Fork	case BUS_MCEERR_AO: logg("     with code:  BUS_MCEERR_AO (Hardware memory error: action optional)"); break;
 			default:            logg("     with code:  Unknown (%i)", si->si_code); break;
 		}
 	}
